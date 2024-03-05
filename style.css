@@ -1,27 +1,41 @@
 body{
     margin: 0;
 
-    background-color: rgb(60, 60, 60, 0.2);
+    background-color: white;
+    color: black;
     font-family: Arial, Helvetica, sans-serif;
 }
 
 .screen{
     width:100vw;
-    height:100vw;
-
+    height:100vh;
     
     border-top: 1px dashed black;
     border-bottom: 1px dashed black;
 }
 
+.top-buttons{
+    text-align: right;
+}
+
 .logo{
-    position:absolute;
+    display: inline;
+}
+
+#container-logo{
+    position:relative;
 
     top:30px;
-    left:30px;
+    left:40px;
 
     font-weight:700;
     font-size: 6em;
+}
+
+#categories-text{
+    display: inline;
+    opacity: 0;
+    
 }
 .articles-container{
     display: flex;
