@@ -4,9 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#000000">
     <title>Document</title>
 
     <link rel="stylesheet" href="style.css">
+
+    <script src="p5.js"></script>
+    <script src="OpenSimplexNoise.js"></script>
 
 </head>
 
@@ -17,6 +21,10 @@
             <div class="logo" id="logo-main">ncode.</div>
             <div id="categories-text"></div>
         </div>
+
+        <canvas id="background-canvas"></canvas>
+
+        <div class="swipe-arrow-down" id="arrow"></div>
 
     </div>
 
@@ -72,6 +80,7 @@
     </div>
 
     <script src="main.js"></script>
+    <script src="background.js"></script>
 </body>
 
 </html>
