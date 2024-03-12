@@ -60,7 +60,7 @@ function advanceWebpage(direction) {
         switch (scrollState) {
 
             case 0:
-
+                
                 containerLogo.animate([{ top: "30px" }], { duration: 700, fill: "forwards", easing: "ease" })
                 containerLogo.animate([{ fontSize: "calc(min(16vw,110px))" }], { duration: 700, fill: "forwards", easing: "ease" })
                 categories.animate([{ opacity: 0 }], { duration: 300, fill: "forwards", easing: "ease" })

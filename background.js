@@ -17,7 +17,7 @@ let gridNoise
 
 function setup() {
     createCanvas(window.innerWidth, window.innerHeight, canvas)
-    pixelDensity(0.5);
+    pixelDensity(0.4);
     frameRate(50)
 
     noise = new OpenSimplexNoise(Date.now())
