@@ -38,7 +38,7 @@ document.addEventListener("touchend", (event) => {
 
     let treshold = 50
 
-    if (duration < 500) {
+    if (duration < 800) {
         if (directionY < -treshold) {
             advanceWebpage(1)
         }
@@ -56,7 +56,7 @@ arrow.addEventListener("click", () => {
 
 function advanceWebpage(direction) {
     if (waitingForAnimation == false) {
-        scrollState = Math.min(Math.max(0, scrollState + direction), 10);
+        scrollState = Math.min(Math.max(0, scrollState + direction), 4);
         switch (scrollState) {
 
             case 0:

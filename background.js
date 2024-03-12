@@ -2,7 +2,7 @@ const canvas = document.getElementById("background-canvas")
 
 
 let field = []
-let rez = 100
+let rez = 120
 let cols, rows
 let increment = 0.2
 let zoff = 0
@@ -10,19 +10,24 @@ let noise
 
 let pointerX = 0
 let pointerY = 0
+let pointerVelocityX = 0
+let pointerVelocityY = 0
 
 let gridNoise
 
 function setup() {
     createCanvas(window.innerWidth, window.innerHeight, canvas)
-    pixelDensity(0.7);
-    frameRate(30)
+    pixelDensity(0.5);
+    frameRate(50)
 
     noise = new OpenSimplexNoise(Date.now())
     grid = new OpenSimplexNoise(Date.now())
 
     cols = 1 + width / rez
     rows = 1 + height / rez
+
+    console.log(cols * rows)
+
     for (let i = 0; i < cols; i++) {
         let k = []
         for (let j = 0; j < rows; j++) {
@@ -34,8 +39,14 @@ function setup() {
 function draw() {
     background(0)
 
-    pointerX += (mouseX - pointerX) * 0.2
-    pointerY += (mouseY - pointerY) * 0.2
+    pointerVelocityX += (mouseX - pointerX) * 0.02
+    pointerVelocityY += (mouseY - pointerY) * 0.02
+
+    pointerX += pointerVelocityX
+    pointerY += pointerVelocityY
+
+    pointerVelocityX *= 0.9
+    pointerVelocityY *= 0.9
 
     let xoff = 0
     for (let i = 0; i < cols; i++) {
@@ -43,7 +54,9 @@ function draw() {
         let yoff = 0
         for (let j = 0; j < rows; j++) {
             field[i][j] = float(noise.noise3D(xoff, yoff, zoff))
-            field[i][j] *= dist(pointerX / rez, pointerY / rez, i, j)
+            //field[i][j] = 1
+            field[i][j] *= dist(pointerX / rez, pointerY / rez, i, j)*1
+            //field[i][j] *= dist(mouseX / rez, mouseY / rez, i, j)*0.5
 
             yoff += increment
         }
@@ -53,7 +66,7 @@ function draw() {
 
     for (let h = -1; h < 1; h += 0.25) {
         stroke(255 * h, 255 * -h, 127)
-        strokeWeight(8)
+        strokeWeight(10)
 
         for (let i = 0; i < cols - 1; i++) {
             for (let j = 0; j < rows - 1; j++) {
