@@ -27,6 +27,17 @@ a {
     overflow: hidden;
 }
 
+.content {
+    position: absolute;
+
+    top:15vh;
+
+    width: 100vw;
+    height: 70vh;
+
+    overflow: hidden;
+}
+
 .top-buttons {
     text-align: right;
     position: absolute;
@@ -73,7 +84,7 @@ a {
     border-bottom: 2px solid white;
     border-right: 2px solid white;
 
-    bottom: 5vh;
+    bottom: 12vh;
     left: calc(50vw - 15px);
 
     cursor: pointer;

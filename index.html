@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
     <meta name="theme-color" content="#000000">
     <title>ncode</title>
 
@@ -24,30 +24,24 @@
 
         <canvas id="background-canvas"></canvas>
 
-        <div class="swipe-arrow-down" id="arrow" onclick="navigator.vibrate(20)"></div>
-
         <div id="buttons" class="top-buttons" onclick="navigator.vibrate(20)">
             <a href="">products</a>
             <a href="">contact</a>
             <a href="">about</a>
         </div>
 
-    </div>
-
-    <div class="screen">
+        <div class="swipe-arrow-down" id="arrow" onclick="navigator.vibrate(20)"></div>
 
     </div>
 
-    <div id="cards" class="screen" style="display:none">
+    <div id="cards" class="content" style="display:none">
 
     </div>
 
-    <div id="info" class="screen" style="display:none">
+    <div id="info" class="content" style="display:none">
 
     </div>
 
     <script src="main.js"></script>
     <script src="background.js"></script>
 </body>
-
-</html>

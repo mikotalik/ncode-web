@@ -115,6 +115,13 @@ function advanceWebpage(direction) {
 
                 document.getElementById("cards").style.display = "none"
                 document.getElementById("info").style.display = "none"
+
+                setTimeout(() => {
+                    if (scrollState == 4) {
+                        setThemeColor("#000000")
+                    }
+                }, 400)
+
                 break
             case 5:
                 animateElementVerticalSwipe(categories, direction, "")
@@ -131,11 +138,14 @@ function advanceWebpage(direction) {
                     if (scrollState == 5) {
                         categories.textContent = ""
                         logo.textContent = "ncode."
+
+                        setThemeColor("#FFFFFF")
                     }
-                }, 400)
+                }, 500)
 
                 document.getElementById("cards").style.display = "block"
                 document.getElementById("info").style.display = "none"
+
                 break
             case 6:
                 document.getElementById("cards").style.display = "none"
@@ -166,4 +176,9 @@ function animateElementVerticalSwipe(element, direction, text) {
         element.textContent = text
         waitingForAnimation = false
     }, 200)
+}
+
+function setThemeColor(color) {
+    var metaThemeColor = document.querySelector("meta[name=theme-color]")
+    metaThemeColor.setAttribute("content", color)
 }
