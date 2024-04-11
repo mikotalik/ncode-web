@@ -1,13 +1,9 @@
-*{
-    overflow: hidden;
-}
-
 body {
     margin: 0;
 
+    overflow: hidden;
 
-    height: 100%;
-    
+    height:100vh;
 
     background-color: black;
     color: white;
@@ -27,6 +23,7 @@ a {
     width: 100vw;
     height: 100vh;
 
+    overflow: hidden;
 }
 
 .content {
@@ -85,7 +82,7 @@ a {
     border-bottom: 2px solid white;
     border-right: 2px solid white;
 
-    bottom: 12vh;
+    bottom: 14vh;
     left: calc(50vw - 15px);
 
     cursor: pointer;

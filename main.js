@@ -111,10 +111,13 @@ function advanceWebpage(direction) {
                     logo.textContent = "ncode"
                     containerLogo.animate([{ top: "40vh" }], { duration: 700, fill: "forwards", easing: "ease" })
                     containerLogo.animate([{ fontSize: "calc(min(24vw,160px))" }], { duration: 700, fill: "forwards", easing: "ease" })
+                    document.body.animate([{ backgroundColor: "#000000" }], { duration: 1200, fill: "forwards", easing: "ease" })
                 }
 
                 document.getElementById("cards").style.display = "none"
                 document.getElementById("info").style.display = "none"
+
+                
 
                 setTimeout(() => {
                     if (scrollState == 4) {
@@ -134,6 +137,9 @@ function advanceWebpage(direction) {
                 arrow.animate([{ borderBottom: "2px solid black" }], { duration: 700, fill: "forwards", easing: "ease" })
                 arrow.animate([{ borderRight: "2px solid black" }], { duration: 700, fill: "forwards", easing: "ease" })
 
+                document.body.animate([{ backgroundColor: "#FFFFFF" }], { duration: 1200, fill: "forwards", easing: "ease" })
+                //document.body.style.backgroundColor = "#FFFFFF"
+
                 setTimeout(() => {
                     if (scrollState == 5) {
                         categories.textContent = ""
@@ -142,14 +148,25 @@ function advanceWebpage(direction) {
                         setThemeColor("#FFFFFF")
                     }
                 }, 500)
-
+                
                 document.getElementById("cards").style.display = "block"
+                document.getElementById("cards").style.opacity = "1"
+                document.getElementById("cards").style.visibility = "visible"
                 document.getElementById("info").style.display = "none"
+                document.getElementById("info").style.opacity = "0"
+                document.getElementById("info").style.visibility = "hidden"
+                
 
                 break
             case 6:
+                
                 document.getElementById("cards").style.display = "none"
+                document.getElementById("cards").style.opacity = "0"
+                document.getElementById("cards").style.visibility = "hidden"
                 document.getElementById("info").style.display = "block"
+                document.getElementById("info").style.opacity = "1"
+                document.getElementById("info").style.visibility = "visible"
+                
                 break
             default:
 

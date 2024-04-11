@@ -24,8 +24,8 @@ function setup() {
     pixelDensity(0.4);
     frameRate(50)
 
-    noise = new OpenSimplexNoise(Date.now())
-    grid = new OpenSimplexNoise(Date.now())
+    noise = new OpenSimplexNoise(floor(Date.now() * 1000))
+    grid = new OpenSimplexNoise(floor(Date.now() * 1000))
 
     cols = 1 + width / rez
     rows = 1 + height / rez
