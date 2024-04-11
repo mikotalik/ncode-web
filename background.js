@@ -15,6 +15,10 @@ let pointerVelocityY = 0
 
 let gridNoise
 
+
+let backgroundBrightness = 0
+
+
 function setup() {
     createCanvas(window.innerWidth, window.innerHeight, canvas)
     pixelDensity(0.4);
@@ -37,7 +41,10 @@ function setup() {
     }
 }
 function draw() {
-    background(0)
+    background(backgroundBrightness)
+
+    if(scrollState > 4 && backgroundBrightness < 256)backgroundBrightness+=4
+    if(scrollState <= 4  && backgroundBrightness > 0)backgroundBrightness-=4
 
     pointerVelocityX += (mouseX - pointerX) * 0.02
     pointerVelocityY += (mouseY - pointerY) * 0.02
@@ -65,7 +72,8 @@ function draw() {
 
 
     for (let h = -1; h < 1; h += 0.25) {
-        stroke(255 * h, 255 * -h, 127)
+
+        stroke(255 * h * (1-(1+backgroundBrightness)/512), 255 * -h, 127)
         strokeWeight(10)
 
         for (let i = 0; i < cols - 1; i++) {

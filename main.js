@@ -1,22 +1,26 @@
 const categoriesText = ["your app.", "your website.", "mixed reality.", "Your idea."]
 
-let scrollState = 0
+var scrollState = 0
 let waitingForAnimation = false
 
 let containerLogo = document.getElementById("container-logo")
 let logo = document.getElementById("logo-main")
 let categories = document.getElementById("categories-text")
+let buttons = document.getElementById("buttons")
+let arrow = document.getElementById("arrow")
 
 let startX, startY
 let startTime
 
 document.addEventListener("wheel", function (event) {
 
-    const direction = event.deltaY * 0.01
+    const direction = 1 * Math.sign(event.deltaY)
 
     console.log(scrollState)
 
     advanceWebpage(direction)
+
+    console.log(scrollState)
 })
 
 document.addEventListener("touchstart", (event) => {
@@ -48,19 +52,17 @@ document.addEventListener("touchend", (event) => {
     }
 })
 
-let arrow = document.getElementById("arrow")
-
 arrow.addEventListener("click", () => {
     advanceWebpage(1)
 })
 
 function advanceWebpage(direction) {
     if (waitingForAnimation == false) {
-        scrollState = Math.min(Math.max(0, scrollState + direction), 4);
+        scrollState = Math.min(Math.max(0, scrollState + direction), 7);
         switch (scrollState) {
 
             case 0:
-                
+
                 containerLogo.animate([{ top: "30px" }], { duration: 700, fill: "forwards", easing: "ease" })
                 containerLogo.animate([{ fontSize: "calc(min(16vw,110px))" }], { duration: 700, fill: "forwards", easing: "ease" })
                 categories.animate([{ opacity: 0 }], { duration: 300, fill: "forwards", easing: "ease" })
@@ -98,6 +100,46 @@ function advanceWebpage(direction) {
                 break
             case 4:
                 animateElementVerticalSwipe(categories, direction, categoriesText[3])
+                buttons.animate([{ color: "#FFFFFF" }], { duration: 700, fill: "forwards", easing: "ease" })
+
+                containerLogo.animate([{ color: "#FFFFFF" }], { duration: 700, fill: "forwards", easing: "ease" })
+
+                arrow.animate([{ borderBottom: "2px solid white" }], { duration: 700, fill: "forwards", easing: "ease" })
+                arrow.animate([{ borderRight: "2px solid white" }], { duration: 700, fill: "forwards", easing: "ease" })
+
+                if (direction < 0) {
+                    logo.textContent = "ncode"
+                    containerLogo.animate([{ top: "40vh" }], { duration: 700, fill: "forwards", easing: "ease" })
+                    containerLogo.animate([{ fontSize: "calc(min(24vw,160px))" }], { duration: 700, fill: "forwards", easing: "ease" })
+                }
+
+                document.getElementById("cards").style.display = "none"
+                document.getElementById("info").style.display = "none"
+                break
+            case 5:
+                animateElementVerticalSwipe(categories, direction, "")
+                buttons.animate([{ color: "#000000" }], { duration: 700, fill: "forwards", easing: "ease" })
+
+                containerLogo.animate([{ top: "30px" }], { duration: 700, fill: "forwards", easing: "ease" })
+                containerLogo.animate([{ fontSize: "calc(min(16vw,110px))" }], { duration: 700, fill: "forwards", easing: "ease" })
+                containerLogo.animate([{ color: "#000000" }], { duration: 700, fill: "forwards", easing: "ease" })
+
+                arrow.animate([{ borderBottom: "2px solid black" }], { duration: 700, fill: "forwards", easing: "ease" })
+                arrow.animate([{ borderRight: "2px solid black" }], { duration: 700, fill: "forwards", easing: "ease" })
+
+                setTimeout(() => {
+                    if (scrollState == 5) {
+                        categories.textContent = ""
+                        logo.textContent = "ncode."
+                    }
+                }, 400)
+
+                document.getElementById("cards").style.display = "block"
+                document.getElementById("info").style.display = "none"
+                break
+            case 6:
+                document.getElementById("cards").style.display = "none"
+                document.getElementById("info").style.display = "block"
                 break
             default:
 
