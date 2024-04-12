@@ -3,7 +3,7 @@ body {
 
     overflow: hidden;
 
-    height:100vh;
+    height: 100vh;
 
     background-color: black;
     color: white;
@@ -29,7 +29,7 @@ a {
 .content {
     position: absolute;
 
-    top:15vh;
+    top: 15vh;
 
     width: 100vw;
     height: 70vh;
@@ -90,6 +90,10 @@ a {
     animation-name: fade;
     animation-duration: 3s;
     animation-iteration-count: infinite;
+}
+
+.content {
+    display: none;
 }
 
 #container-logo {

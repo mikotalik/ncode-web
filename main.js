@@ -78,7 +78,7 @@ function advanceWebpage(direction) {
             case 1:
 
                 logo.textContent = "ncode"
-                containerLogo.animate([{ top: "40vh" }], { duration: 700, fill: "forwards", easing: "ease" })
+                containerLogo.animate([{ top: "37vh" }], { duration: 700, fill: "forwards", easing: "ease" })
                 containerLogo.animate([{ fontSize: "calc(min(24vw,160px))" }], { duration: 700, fill: "forwards", easing: "ease" })
 
                 if (direction > 0) {
@@ -109,7 +109,7 @@ function advanceWebpage(direction) {
 
                 if (direction < 0) {
                     logo.textContent = "ncode"
-                    containerLogo.animate([{ top: "40vh" }], { duration: 700, fill: "forwards", easing: "ease" })
+                    containerLogo.animate([{ top: "37vh" }], { duration: 700, fill: "forwards", easing: "ease" })
                     containerLogo.animate([{ fontSize: "calc(min(24vw,160px))" }], { duration: 700, fill: "forwards", easing: "ease" })
                     document.body.animate([{ backgroundColor: "#000000" }], { duration: 1200, fill: "forwards", easing: "ease" })
                 }
@@ -137,7 +137,7 @@ function advanceWebpage(direction) {
                 arrow.animate([{ borderBottom: "2px solid black" }], { duration: 700, fill: "forwards", easing: "ease" })
                 arrow.animate([{ borderRight: "2px solid black" }], { duration: 700, fill: "forwards", easing: "ease" })
 
-                document.body.animate([{ backgroundColor: "#FFFFFF" }], { duration: 1200, fill: "forwards", easing: "ease" })
+                document.body.animate([{ backgroundColor: "#FFFFFF" }], { duration: 2000, fill: "forwards", easing: "ease" })
                 //document.body.style.backgroundColor = "#FFFFFF"
 
                 setTimeout(() => {
