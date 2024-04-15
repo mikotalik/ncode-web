@@ -43,8 +43,9 @@ function setup() {
 function draw() {
     background(backgroundBrightness)
 
-    if(scrollState > 4 && backgroundBrightness < 256)backgroundBrightness+=4
+    if(scrollState ==5 && backgroundBrightness < 256)backgroundBrightness+=4
     if(scrollState <= 4  && backgroundBrightness > 0)backgroundBrightness-=4
+    if(scrollState >= 6  && backgroundBrightness > 0)backgroundBrightness-=4
 
     pointerVelocityX += (mouseX - pointerX) * 0.02
     pointerVelocityY += (mouseY - pointerY) * 0.02

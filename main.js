@@ -148,25 +148,60 @@ function advanceWebpage(direction) {
                         setThemeColor("#FFFFFF")
                     }
                 }, 500)
-                
+
                 document.getElementById("cards").style.display = "block"
                 document.getElementById("cards").style.opacity = "1"
                 document.getElementById("cards").style.visibility = "visible"
                 document.getElementById("info").style.display = "none"
                 document.getElementById("info").style.opacity = "0"
                 document.getElementById("info").style.visibility = "hidden"
-                
+                document.getElementById("about").style.display = "none"
+                document.getElementById("about").style.opacity = "0"
+                document.getElementById("about").style.visibility = "hidden"
+
 
                 break
             case 6:
-                
+
                 document.getElementById("cards").style.display = "none"
                 document.getElementById("cards").style.opacity = "0"
                 document.getElementById("cards").style.visibility = "hidden"
                 document.getElementById("info").style.display = "block"
                 document.getElementById("info").style.opacity = "1"
                 document.getElementById("info").style.visibility = "visible"
-                
+                document.getElementById("about").style.display = "none"
+                document.getElementById("about").style.opacity = "0"
+                document.getElementById("about").style.visibility = "hidden"
+                buttons.animate([{ color: "#FFFFFF" }], { duration: 700, fill: "forwards", easing: "ease" })
+
+                containerLogo.animate([{ color: "#FFFFFF" }], { duration: 700, fill: "forwards", easing: "ease" })
+
+                arrow.animate([{ borderBottom: "2px solid white" }], { duration: 700, fill: "forwards", easing: "ease" })
+                arrow.animate([{ borderRight: "2px solid white" }], { duration: 700, fill: "forwards", easing: "ease" })
+
+
+                    document.body.animate([{ backgroundColor: "#000000" }], { duration: 1200, fill: "forwards", easing: "ease" })
+
+
+
+
+                setTimeout(() => {
+                    if (scrollState == 6) {
+                        setThemeColor("#000000")
+                    }
+                }, 400)
+
+                break
+            case 7:
+
+
+                document.getElementById("info").style.display = "none"
+                document.getElementById("info").style.opacity = "0"
+                document.getElementById("info").style.visibility = "hidden"
+                document.getElementById("about").style.display = "block"
+                document.getElementById("about").style.opacity = "1"
+                document.getElementById("about").style.visibility = "visible"
+
                 break
             default:
 
