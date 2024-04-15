@@ -183,8 +183,6 @@ p {
     color: white;
     width: 25vw;
     margin: auto;
-    display: flex;
-    flex-direction: row;
     text-align: justify;
 
     p{
@@ -218,6 +216,20 @@ form {
     border-left: 2px dashed #888;
     margin: auto 0;
 }
+.about-container{
+    display:flex;
+    flex-direction: row;
+    height: inherit;
+  }
+  .aboutus-text{
+    width: 25vw;
+    margin: auto;
+    text-align: justify;
+    color:#ddd;
+    p{
+    line-height: 1.5; 
+    }
+  }
 
 @media screen and (max-width: 800px) {
 
@@ -227,9 +239,9 @@ form {
 
     .line {
          height: 0;
-         width: 50vw;
+         width: 60vw;
          border-left:0;
-         border-bottom: 3px solid #888;
+         border-bottom: 2px dashed #888;
          margin: 0 auto;
     }
 
@@ -237,17 +249,21 @@ form {
         flex-direction: column;
     }
 
-    .aboutus{
+    .about-container{
+        flex-direction: column;
+    }
+
+    .aboutus, .aboutus-text{
         width:100vw;
-        height:30vh;
         p{
-            height:40vh;
-            width:70vw;
+            height: 25vh;
+            width: 70vw;
             line-height: 1.2;
-            font-size:16px;
+            font-size: 16px;
             padding: 0 30px;
-            align-content: start;
             word-spacing: unset;
+            margin: auto;
+            align-content: center;
         }
 
     }
@@ -255,6 +271,7 @@ form {
     .contact{
         width:100vw;
         height:30vh;
+        justify-content: center;
     }
 
     form{
@@ -300,20 +317,4 @@ input[type=text], select, textarea {
   input[type=submit]:hover {
     background-color: #fff;
     color:#000;
-  }
-
-  .about-container{
-    display:flex;
-    flex-direction: row;
-    height: inherit;
-  }
-  .aboutus-text{
-    color: white;
-    width: 25vw;
-    margin: auto;
-    text-align: justify;
-    color:#ddd;
-    p{
-    line-height: 1.5; 
-    }
   }
